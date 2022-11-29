@@ -1,4 +1,4 @@
-function App() {
+function MenuApp() {
   // 메뉴 데이터(이후 수정 예정)
   const menuData = [
     {
@@ -12,7 +12,6 @@ function App() {
   ];
 
   const menuRendering = () => {
-    const menus = [];
     for (let index = 0; index < menuData.length; index++) {
       menus.push(
         <form>
@@ -23,7 +22,12 @@ function App() {
     }
   };
 
-  return <div>{menuRendering()}</div>;
+  return (
+    <div>
+      <h1>메뉴 목록 화면</h1>
+      {menuRendering}
+    </div>
+  );
 }
 
-export default App;
+export default MenuApp;
