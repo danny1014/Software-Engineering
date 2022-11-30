@@ -1,23 +1,28 @@
 html {
   margin: 0;
-  background-color: #e4e4e4;
+  background: url("https://cdn.sommeliertimes.com/news/photo/201912/15300_32083_1733.jpg")
+    top center no-repeat;
+  background-size: cover;
+
+  --menu-wrap-width: 1160px;
 }
 
 #menus {
   display: flex;
-  width: auto;
-  margin-left: 300px;
-  margin-right: 300px;
-  margin-top: auto;
-  margin-bottom: auto;
-  background-color: white;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  width: var(--menu-wrap-width);
+  top: 0;
+  left: 0;
+  margin: 20px auto;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .menu {
   display: inline-block;
 
   margin: 15px;
-  background-color: darkgrey;
+  background-color: white;
   border-radius: 20px;
   padding: 10px;
 }
