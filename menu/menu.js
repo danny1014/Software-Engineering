@@ -74,8 +74,16 @@ function menuInit() {
   }
 
   const menusDiv = Array.from(document.getElementsByClassName("menu"));
-  const popup = document.getElementById("menuPopup");
+  const popupWrap = document.getElementById("popupWrap");
+  const popup = document.getElementById("popupInner");
 
+  // 팝업 닫기 event
+  const onCloseClick = () => {
+    popup.innerHTML = "";
+    popupWrap.style.backgroundColor = "none";
+  };
+
+  // 팝업 열기 event
   const onMenuClick = (event) => {
     console.log("click");
     const id = event.target.id;
@@ -97,12 +105,20 @@ function menuInit() {
         const menuName = `<h1 class="popupName">${element.name}</h1>`;
         const menuImg = `<img class="popupImg" src='${element.img}' alt="${element.name}">`;
         const menuInformation = `<p class="popupInfo">${element.information}</p>`;
+        const closeBtn = `<button id="closeBtn">닫기</button>`;
 
-        popup.innerHTML = menuImg + menuName + menuInformation;
+        popup.innerHTML = menuImg + menuName + menuInformation + closeBtn;
+
+        document
+          .getElementById("closeBtn")
+          .addEventListener("click", onCloseClick);
+
+        popupWrap.style.backgroundColor = "rgba(0, 0, 0, 0.5)";
         return;
       }
     }
   };
+
   menusDiv.forEach((menu) => menu.addEventListener("click", onMenuClick));
 }
 
