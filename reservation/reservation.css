@@ -1,0 +1,60 @@
+body {
+  margin: 0;
+  height: 100%;
+  background: url("https://cdn.sommeliertimes.com/news/photo/201912/15300_32083_1733.jpg")
+    top center no-repeat;
+  background-size: cover;
+}
+
+.main.container {
+  width: 500px;
+  height: 700px;
+  margin: 100px auto;
+  padding: 20px;
+  border-radius: 15px;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.member.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+h1 {
+  width: 100%;
+  margin-top: 25px;
+  color: white;
+}
+
+.time.container {
+  width: 450px;
+  margin: 30px auto;
+}
+
+.time {
+  padding: 15px 10px;
+}
+.time input[type="radio"] {
+  display: none;
+}
+.time input[type="radio"] + label {
+  display: inline-block;
+  cursor: pointer;
+  height: 24px;
+  width: 90px;
+  border: 1px solid #333;
+  line-height: 24px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 13px;
+  margin: 8px;
+  border-radius: 4px;
+}
+.time input[type="radio"] + label {
+  background-color: #fff;
+  color: #333;
+}
+.time input[type="radio"]:checked + label {
+  background-color: #333;
+  color: #fff;
+}
