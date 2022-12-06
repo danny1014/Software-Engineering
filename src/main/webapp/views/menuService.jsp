@@ -5,7 +5,6 @@
     String BookerPhone = request.getParameter("BookerPhone");   	//전화번호
     String MenuName = null;
     int MenuPrice;
-    //*********사진 변수 추가*********
 
     Connection myConn = null;
     Statement stmt = null;
@@ -29,12 +28,9 @@
         MenuName = rs.getString(1);
         MenuPrice = rs.getInt(2);
 
-        //*****사진 SELECT*********
-
-        /*
-        가져온 정보 출력
-         */
     }
+
+    
 
     stmt.close();
     myConn.close();
