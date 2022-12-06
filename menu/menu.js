@@ -63,6 +63,7 @@ const menuData = [
 
 function menuInit() {
   const menus = document.getElementById("menus");
+  console.log("success");
 
   for (let i = 0; i < menuData.length; i++) {
     const menuName = `<p class="menuName" id="name${menuData[i].name}">${menuData[i].name}</p>`;
@@ -77,10 +78,11 @@ function menuInit() {
   const popupWrap = document.getElementById("popupWrap");
   const popup = document.getElementById("popupInner");
 
+  console.log(menusDiv);
   // 팝업 닫기 event
   const onCloseClick = () => {
     popup.innerHTML = "";
-    popupWrap.style.backgroundColor = "none";
+    popupWrap.style.display = "none";
   };
 
   // 팝업 열기 event
@@ -89,6 +91,7 @@ function menuInit() {
     const id = event.target.id;
 
     for (let i = 0; i < menuData.length; i++) {
+      popupWrap.style.display = "block";
       const element = menuData[i];
 
       console.log("event target: " + event.target);
@@ -119,7 +122,12 @@ function menuInit() {
     }
   };
 
-  menusDiv.forEach((menu) => menu.addEventListener("click", onMenuClick));
+  for (let i = 0; i < menusDiv.length; i++) {
+    const element = menusDiv[i];
+    element.addEventListener("click", onMenuClick);
+  }
+
+  // menusDiv.forEach((menu) => menu.addEventListener("click", onMenuClick));
 }
 
 document.addEventListener("DOMContentLoaded", menuInit);

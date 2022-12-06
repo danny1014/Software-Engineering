@@ -8,10 +8,10 @@
     <title>예약</title>
   </head>
   <body>
-    <div class="main container">
+    <form class="main container" id="formReservation" name="form">
       <div class="member container">
         <h1>인원수</h1>
-        <select name="member" id="member">
+        <select name="member" id="memberSelect">
           <option value="선택">선택</option>
           <option value="1">1</option>
           <option value="2">2</option>
@@ -20,10 +20,10 @@
           <option value="5">5</option>
           <option value="6">6</option>
         </select>
-        <p>명</p>
+        <h2>명</h2>
       </div>
       <h1>시간</h1>
-      <div class="time container">
+      <div class="time container" id="timeSelect">
         <input type="radio" name="time" id="1100" />
         <label for="1100">11:00</label>
         <input type="radio" name="time" id="1130" />
@@ -60,7 +60,7 @@
       <h1>메뉴</h1>
       <div class="menu container"></div>
       <button type="submit">예약</button>
-    </div>
+    </form>
   </body>
   <script src="reservation.js"></script>
 </html>
