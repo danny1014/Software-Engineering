@@ -68,9 +68,7 @@ for (let i = 0; i < menuData.length; i++) {
   const element = menuData[i];
   const name = `<p class="menuName">${element.name}</p>`;
   const img = `<img class="menuImg" src='${menuData[i].img}' alt="${menuData[i].name} 이미지">`;
-  const count = `<input class="menuCount" name="menu" type="number" min='0' step='1' id=${
-    element.name + "Count"
-  } value="0">`;
+  const count = `<input class="menuCount" name="menuCnt" type="number" min='0' step='1' value="0">`;
 
   menus.innerHTML += `<div class="menu">${img + name + count}</div>`;
 }
@@ -80,7 +78,7 @@ function onSubmitClick(event) {
 
   const member = event.target.member.value;
   const time = event.target.time;
-  const menusCnt = event.target.menu;
+  const menusCnt = event.target.menuCnt;
   let selectTime = "";
 
   for (let i = 0; i < time.length; i++) {
