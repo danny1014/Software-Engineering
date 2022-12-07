@@ -59,6 +59,18 @@ const menuData = [
     price: 7000,
     information: "메뉴10 상세정보",
   },
+  {
+    name: "메뉴11",
+    img: "../img/menuImg.png",
+    price: 5000,
+    information: "메뉴11 상세정보",
+  },
+  {
+    name: "메뉴12",
+    img: "../img/menuImg.png",
+    price: 7000,
+    information: "메뉴12 상세정보",
+  },
 ];
 
 function menuInit() {

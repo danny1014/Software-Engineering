@@ -59,6 +59,18 @@ const menuData = [
     price: 7000,
     information: "메뉴10 상세정보",
   },
+  {
+    name: "메뉴11",
+    img: "../img/menuImg.png",
+    price: 5000,
+    information: "메뉴11 상세정보",
+  },
+  {
+    name: "메뉴12",
+    img: "../img/menuImg.png",
+    price: 7000,
+    information: "메뉴12 상세정보",
+  },
 ];
 
 // 메뉴 추가
@@ -73,6 +85,8 @@ for (let i = 0; i < menuData.length; i++) {
   menus.innerHTML += `<div class="menu">${img + name + count}</div>`;
 }
 
+// 예약 확인 이벤트
+var reservationData = {};
 function onSubmitClick(event) {
   event.preventDefault();
 
@@ -94,9 +108,14 @@ function onSubmitClick(event) {
     counts.push(element.value);
   }
 
+  reservationData.member = member;
+  reservationData.time = time;
+  reservationData.menu = counts;
+
   console.log("인원수: " + member);
   console.log("예약시간: " + selectTime);
   console.log("예약 메뉴: " + counts);
+  console.log(reservationData);
 }
 
 document
