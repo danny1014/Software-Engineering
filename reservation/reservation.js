@@ -1,8 +1,86 @@
+const menuData = [
+  {
+    name: "메뉴1",
+    img: "../img/menuImg.png",
+    price: 5000,
+    information: "메뉴1 상세정보",
+  },
+  {
+    name: "메뉴2",
+    img: "../img/menuImg.png",
+    price: 7000,
+    information: "메뉴2 상세정보",
+  },
+  {
+    name: "메뉴3",
+    img: "../img/menuImg.png",
+    price: 5000,
+    information: "메뉴3 상세정보",
+  },
+  {
+    name: "메뉴4",
+    img: "../img/menuImg.png",
+    price: 7000,
+    information: "메뉴4 상세정보",
+  },
+  {
+    name: "메뉴5",
+    img: "../img/menuImg.png",
+    price: 5000,
+    information: "메뉴5 상세정보",
+  },
+  {
+    name: "메뉴6",
+    img: "../img/menuImg.png",
+    price: 7000,
+    information: "메뉴6 상세정보",
+  },
+  {
+    name: "메뉴7",
+    img: "../img/menuImg.png",
+    price: 5000,
+    information: "메뉴7 상세정보",
+  },
+  {
+    name: "메뉴8",
+    img: "../img/menuImg.png",
+    price: 7000,
+    information: "메뉴8 상세정보",
+  },
+  {
+    name: "메뉴9",
+    img: "../img/menuImg.png",
+    price: 5000,
+    information: "메뉴9 상세정보",
+  },
+  {
+    name: "메뉴10",
+    img: "../img/menuImg.png",
+    price: 7000,
+    information: "메뉴10 상세정보",
+  },
+];
+
+// 메뉴 추가
+const menus = document.querySelector(".menus");
+
+for (let i = 0; i < menuData.length; i++) {
+  const element = menuData[i];
+  const name = `<p class="menuName">${element.name}</p>`;
+  const img = `<img class="menuImg" src='${menuData[i].img}' alt="${menuData[i].name} 이미지">`;
+  const count = `<input class="menuCount" name="menu" type="number" min='0' step='1' id=${
+    element.name + "Count"
+  } value="0">`;
+
+  menus.innerHTML += `<div class="menu">${img + name + count}</div>`;
+}
+
 function onSubmitClick(event) {
   event.preventDefault();
 
   const member = event.target.member.value;
   const time = event.target.time;
+  const menusCnt = event.target.menu;
   let selectTime = "";
 
   for (let i = 0; i < time.length; i++) {
@@ -12,8 +90,15 @@ function onSubmitClick(event) {
     }
   }
 
-  console.log(member);
-  console.log(selectTime);
+  let counts = [];
+  for (let i = 0; i < menusCnt.length; i++) {
+    const element = menusCnt[i];
+    counts.push(element.value);
+  }
+
+  console.log("인원수: " + member);
+  console.log("예약시간: " + selectTime);
+  console.log("예약 메뉴: " + counts);
 }
 
 document

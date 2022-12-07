@@ -5,6 +5,39 @@ html {
   background-size: cover;
 
   --menu-wrap-width: 1160px;
+  --color-white: #eeeeee;
+  --color-light-teal: #e7f6f2;
+  --color-teal: #00adb5;
+  --color-dark-teal: #395b64;
+  --color-dark-gray: #393e46;
+  --color-black: #222831;
+}
+.header {
+  width: 80%;
+  height: 80px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header h1 a {
+  text-decoration: none;
+  color: white;
+  font-family: abster;
+}
+
+.nav ul li {
+  display: inline-block;
+  margin: 0 10px;
+  font-family: Helvetica;
+}
+.nav ul li a {
+  text-decoration: none;
+  color: white;
+}
+
+.nav ul li a:hover {
+  color: aquamarine;
 }
 
 #menus {
@@ -12,17 +45,27 @@ html {
   flex-wrap: wrap;
   justify-content: space-evenly;
   width: var(--menu-wrap-width);
-  top: 0;
-  left: 0;
+  height: 800px;
   margin: 20px auto;
   background-color: rgba(0, 0, 0, 0.5);
+  overflow: scroll;
+  overflow-x: unset;
+}
+
+#menus::-webkit-scrollbar {
+  width: 15px;
+}
+
+#menus::-webkit-scrollbar-thumb {
+  background-color: var(--color-white);
+  border-radius: 8px;
 }
 
 .menu {
   display: inline-block;
 
   margin: 15px;
-  background-color: white;
+  background-color: var(--color-light-teal);
   border-radius: 20px;
   padding: 10px;
 }
@@ -55,11 +98,23 @@ html {
 #popupInner {
   display: flex;
   flex-direction: column;
-  width: calc(var(--menu-wrap-width) - 200px);
-  background-color: aliceblue;
+  width: calc(var(--menu-wrap-width) - 400px);
+  height: 800px;
+  background-color: var(--color-light-teal);
   margin: 8% auto;
+  padding: 8px;
+  border-radius: 9px;
+  overflow: scroll;
+  overflow-x: hidden;
 }
 
+#popupInner::-webkit-scrollbar {
+  width: 18px;
+}
+#popupInner::-webkit-scrollbar-thumb {
+  background-color: var(--color-teal);
+  border-radius: 9px;
+}
 .popupImg {
   height: 500px;
   width: auto;
@@ -74,4 +129,41 @@ html {
 .popupInfo {
   margin: auto;
   margin-top: 30px;
+  font-size: 18px;
+}
+
+#closeBtn {
+  all: unset;
+  background-color: var(--color-dark-teal);
+  margin: 21px auto;
+  padding: 0.5rem 1rem;
+
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  width: auto;
+
+  border: none;
+  border-radius: 4px;
+
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+
+  cursor: pointer;
+
+  transition: 0.5s;
+
+  color: var(--color-light-teal);
+}
+
+#closeBtn:active,
+#closeBtn:hover,
+#closeBtn:focus {
+  background-color: var(--color-dark-gray);
+  outline: 0;
+}
+#closeBtn:disabled {
+  opacity: 0.5;
 }
