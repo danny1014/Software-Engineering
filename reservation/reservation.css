@@ -197,3 +197,19 @@ select {
 .submitBtn:disabled {
   opacity: 0.5;
 }
+
+.user {
+  width: 100%;
+  margin: 12px auto;
+  color: white;
+}
+
+input {
+  height: 32px;
+  font-size: 15px;
+  border: 0;
+  border-radius: 15px;
+  outline: none;
+  padding-left: 10px;
+  background-color: rgb(233, 233, 233);
+}

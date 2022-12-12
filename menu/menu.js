@@ -155,11 +155,6 @@ function menuInit() {
       popupWrap.style.display = "block";
       const element = menuData[i];
 
-      console.log("event target: " + event.target);
-      console.log("element name: " + element.name);
-      console.log("id: " + id + "\n");
-      console.log("id" + element.name);
-
       if (
         id === element.name ||
         id === "img" + element.name ||
@@ -175,12 +170,13 @@ function menuInit() {
 .
 .
         </pre>`;
+        const menuPrice = `<h3>${element.price}원</h3>`;
         const closeBtn = `<button id="closeBtn">닫기</button>`;
 
         body.style.overflow = "hidden";
 
-        popup.innerHTML = menuImg + menuName + menuInformation + closeBtn;
-
+        popup.innerHTML =
+          menuImg + menuName + menuInformation + menuPrice + closeBtn;
         document
           .getElementById("closeBtn")
           .addEventListener("click", onCloseClick);

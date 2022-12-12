@@ -93,8 +93,10 @@ function onSubmitClick(event) {
   const member = event.target.member.value;
   const time = event.target.time;
   const menusCnt = event.target.menuCnt;
-  let selectTime = "";
+  const userName = event.target.name.value;
+  const userPhone = event.target.phone.value;
 
+  let selectTime = "";
   for (let i = 0; i < time.length; i++) {
     const element = time[i];
     if (element.checked === true) {
@@ -111,10 +113,14 @@ function onSubmitClick(event) {
   reservationData.member = member;
   reservationData.time = time;
   reservationData.menu = counts;
+  reservationData.name = userName;
+  reservationData.phone = userPhone;
 
   console.log("인원수: " + member);
   console.log("예약시간: " + selectTime);
   console.log("예약 메뉴: " + counts);
+  console.log("예약자명: " + userName);
+  console.log("예약자 폰번호: " + userPhone);
   console.log(reservationData);
 }
 
