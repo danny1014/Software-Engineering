@@ -40,7 +40,9 @@ html {
   color: aquamarine;
 }
 
-#menus {
+#main_menus,
+#sub_menus,
+#drink_menus {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
@@ -52,11 +54,15 @@ html {
   overflow-x: unset;
 }
 
-#menus::-webkit-scrollbar {
+#main_menus::-webkit-scrollbar,
+#sub_menus::-webkit-scrollbar,
+#drink_menus::-webkit-scrollbar {
   width: 15px;
 }
 
-#menus::-webkit-scrollbar-thumb {
+#main_menus::-webkit-scrollbar-thumb,
+#sub_menus::-webkit-scrollbar-thumb,
+#drink_menus::-webkit-scrollbar-thumb {
   background-color: var(--color-white);
   border-radius: 8px;
 }
@@ -68,6 +74,7 @@ html {
   background-color: var(--color-light-teal);
   border-radius: 20px;
   padding: 10px;
+  height: 350px;
 }
 
 .menuImg {
@@ -166,4 +173,12 @@ html {
 }
 #closeBtn:disabled {
   opacity: 0.5;
+}
+
+h2 {
+  width: 100%;
+  text-align: center;
+  color: white;
+  font-weight: 1000;
+  height: 30px;
 }

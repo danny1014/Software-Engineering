@@ -1,72 +1,106 @@
 const menuData = [
   {
     name: "메뉴1",
+    dish: "main",
     img: "../img/menuImg.png",
     price: 5000,
     information: "메뉴1 상세정보",
   },
   {
     name: "메뉴2",
+    dish: "main",
     img: "../img/menuImg.png",
     price: 7000,
     information: "메뉴2 상세정보",
   },
   {
     name: "메뉴3",
+    dish: "main",
     img: "../img/menuImg.png",
     price: 5000,
     information: "메뉴3 상세정보",
   },
   {
     name: "메뉴4",
+    dish: "main",
     img: "../img/menuImg.png",
     price: 7000,
     information: "메뉴4 상세정보",
   },
   {
     name: "메뉴5",
+    dish: "main",
+
     img: "../img/menuImg.png",
     price: 5000,
     information: "메뉴5 상세정보",
   },
   {
     name: "메뉴6",
+    dish: "main",
     img: "../img/menuImg.png",
     price: 7000,
     information: "메뉴6 상세정보",
   },
   {
     name: "메뉴7",
+    dish: "sub",
     img: "../img/menuImg.png",
     price: 5000,
     information: "메뉴7 상세정보",
   },
   {
     name: "메뉴8",
+    dish: "sub",
     img: "../img/menuImg.png",
     price: 7000,
     information: "메뉴8 상세정보",
   },
   {
     name: "메뉴9",
+    dish: "sub",
     img: "../img/menuImg.png",
     price: 5000,
     information: "메뉴9 상세정보",
   },
   {
     name: "메뉴10",
+    dish: "sub",
     img: "../img/menuImg.png",
     price: 7000,
     information: "메뉴10 상세정보",
   },
   {
     name: "메뉴11",
+    dish: "sub",
     img: "../img/menuImg.png",
     price: 5000,
     information: "메뉴11 상세정보",
   },
   {
     name: "메뉴12",
+    dish: "sub",
+    img: "../img/menuImg.png",
+    price: 7000,
+    information: "메뉴12 상세정보",
+  },
+  {
+    name: "메뉴13",
+    dish: "drink",
+    img: "../img/menuImg.png",
+    price: 7000,
+    information: "메뉴10 상세정보",
+  },
+  {
+    name: "메뉴14",
+    dish: "drink",
+    img: "../img/menuImg.png",
+    price: 5000,
+    information: "메뉴11 상세정보",
+  },
+  {
+    name: "메뉴15",
+    dish: "drink",
     img: "../img/menuImg.png",
     price: 7000,
     information: "메뉴12 상세정보",
@@ -74,16 +108,29 @@ const menuData = [
 ];
 
 function menuInit() {
-  const menus = document.getElementById("menus");
+  const main = document.getElementById("main_menus");
+  const sub = document.getElementById("sub_menus");
+  const drink = document.getElementById("drink_menus");
+
   console.log("success");
 
   for (let i = 0; i < menuData.length; i++) {
     const menuName = `<p class="menuName" id="name${menuData[i].name}">${menuData[i].name}</p>`;
     const menuImg = `<img class="menuImg" id="img${menuData[i].name}" src='${menuData[i].img}' alt="${menuData[i].name} 이미지">`;
 
-    menus.innerHTML =
-      menus.innerHTML +
-      `<div class="menu" id=${menuData[i].name}>${menuImg}${menuName}</div>`;
+    if (menuData[i].dish === "main") {
+      main.innerHTML =
+        main.innerHTML +
+        `<div class="menu" id=${menuData[i].name}>${menuImg}${menuName}</div>`;
+    } else if (menuData[i].dish === "sub") {
+      sub.innerHTML =
+        sub.innerHTML +
+        `<div class="menu" id=${menuData[i].name}>${menuImg}${menuName}</div>`;
+    } else if (menuData[i].dish === "drink") {
+      drink.innerHTML =
+        drink.innerHTML +
+        `<div class="menu" id=${menuData[i].name}>${menuImg}${menuName}</div>`;
+    }
   }
 
   const body = document.querySelector("body");
